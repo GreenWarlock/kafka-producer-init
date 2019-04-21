@@ -8,6 +8,7 @@ class CreateVisualizations < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_index :visualizations, [:visualized_user_id, :visualizer_user_id], unique: true, name: 'visualizations_index'
+    add_index :visualizations, %i[visualized_user_id visualizer_user_id],
+              unique: true, name: 'visualizations_index'
   end
 end
