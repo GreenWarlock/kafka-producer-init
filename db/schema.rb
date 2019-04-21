@@ -15,18 +15,6 @@ ActiveRecord::Schema.define(version: 2019_04_21_034143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "statistics", force: :cascade do |t|
-    t.bigint "target_user_id"
-    t.bigint "observer_user_id"
-    t.integer "visualizations"
-    t.date "visualization_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["observer_user_id"], name: "index_statistics_on_observer_user_id"
-    t.index ["target_user_id", "observer_user_id"], name: "index_statistics_on_target_user_id_and_observer_user_id", unique: true
-    t.index ["target_user_id"], name: "index_statistics_on_target_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -42,6 +30,18 @@ ActiveRecord::Schema.define(version: 2019_04_21_034143) do
     t.string "country"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "visualizations", force: :cascade do |t|
+    t.bigint "visualized_user_id"
+    t.bigint "visualizer_user_id"
+    t.integer "count"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["visualized_user_id", "visualizer_user_id"], name: "visualizations_index", unique: true
+    t.index ["visualized_user_id"], name: "index_visualizations_on_visualized_user_id"
+    t.index ["visualizer_user_id"], name: "index_visualizations_on_visualizer_user_id"
   end
 
 end

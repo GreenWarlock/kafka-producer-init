@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :target_statistics, class_name: 'Statistic', foreign_key: 'target_user_id'
-  has_many :observer_statistics, class_name: 'Statistic', foreign_key: 'observer_user_id'
+  has_many :visualized_statistics, class_name: 'Visualization', foreign_key: 'visualized_user_id'
+  has_many :visualizer_statistics, class_name: 'Visualization', foreign_key: 'visualizer_user_id'
 end
