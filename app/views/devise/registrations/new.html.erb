@@ -32,6 +32,41 @@
 
     <div class="col-md-4 offset-md-4">
       <div class="form-group">
+        <%= f.label :first_name %><br/>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4 offset-md-4">
+      <div class="form-group">
+        <%= f.label :last_name %><br/>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4 offset-md-4">
+      <div class="form-group">
+        <%= f.label :city %><br/>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4 offset-md-4">
+      <div class="form-group">
+        <%= f.label :country %><br/>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4 offset-md-4">
+      <div class="form-group">
+        <%= f.label :birthday %><br/>
+        <%= f.date_field :birthday, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4 offset-md-4">
+      <div class="form-group">
         <%= f.submit "Sign up", class: 'btn btn-primary' %>
       </div>
     </div>

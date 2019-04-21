@@ -1,22 +1,22 @@
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th>Email</th>
-      <th>First name</th>
-      <th>Last name</th>
-    </tr>
+  <tr>
+    <th>Email</th>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
   </thead>
   <tbody>
-  <tr>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
+    <tr>
       <td><%= link_to user&.email, edit_user_path(user) %></td>
       <td><%= user&.first_name %></td>
       <td><%= user&.last_name %></td>
       <td><%= link_to 'Delete',
                       user_path(user),
                       method: :delete,
-                      data: { confirm: 'Are you sure?' } %> </td>
-    <% end %>
-  </tr>
+                      data: {confirm: 'Are you sure?'} %> </td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
