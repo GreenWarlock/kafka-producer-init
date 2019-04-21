@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_020041) do
+ActiveRecord::Schema.define(version: 2019_04_21_034143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "statistics", force: :cascade do |t|
+    t.bigint "target_user_id"
+    t.bigint "observer_user_id"
+    t.integer "visualizations"
+    t.date "visualization_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["observer_user_id"], name: "index_statistics_on_observer_user_id"
+    t.index ["target_user_id", "observer_user_id"], name: "index_statistics_on_target_user_id_and_observer_user_id", unique: true
+    t.index ["target_user_id"], name: "index_statistics_on_target_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
