@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_162242) do
+ActiveRecord::Schema.define(version: 2019_04_21_164508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_162242) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "type", default: 0
     t.index ["visualized_user_id", "visualizer_user_id"], name: "visualizations_index", unique: true
     t.index ["visualized_user_id"], name: "index_visualizations_on_visualized_user_id"
     t.index ["visualizer_user_id"], name: "index_visualizations_on_visualizer_user_id"
