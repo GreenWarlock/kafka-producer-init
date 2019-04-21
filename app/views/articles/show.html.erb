@@ -1,0 +1,21 @@
+<div class="col-md-12">
+
+  <div class="col-md-4 offset-md-4">
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </div>
+
+  <div class="col-md-4 offset-md-4">
+    <strong>Text:</strong>
+    <%= @article.text %>
+  </div>
+
+  <div class="col-md-4 offset-md-4">
+    <strong>Author:</strong>
+    <%= @article.author.email %>
+  </div>
+
+  <div class="col-md-4 offset-md-4">
+    <%= link_to 'Back', articles_path %>
+  </div>
+</div>
