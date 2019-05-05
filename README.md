@@ -8,6 +8,12 @@ y la aplicación LinkedOn.
 
 ## Setup
 
+### Requisitos:
+
+_Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https://docs.microsoft.com/es-es/windows/wsl/install-win10 
+(Usar Windows bajo su propio riesgo, esto debido a que correr Rails en Windows trae muchos problemas)
+    
+
 1. Instala git en tu computadora (Omite este paso si ya lo tienes) https://git-scm.com/book/es/v1/Empezando-Instalando-Git
 
 2. Clona el proyecto con el siguiente comando:
@@ -18,11 +24,7 @@ $ git clone https://github.com/fer9305/kafka-producer-init.git
 
 3. Instala Docker dependiendo de tu sistema operativo:
 
-### Windows: 
-
-https://enmilocalfunciona.io/instalando-y-probando-docker-en-windows-10/
-
-### Linux (De preferencia usar Ubuntu 18.04): 
+### Ubuntu 
 
 Docker:
 https://ubunlog.com/como-instalar-docker-en-ubuntu-18-04-y-derivados/
