@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -41,6 +41,9 @@ gem 'devise'
 
 gem 'bootstrap'
 gem 'jquery-rails'
+
+# This library provides a dead easy way to start publishing messages to a Kafka cluster from your Ruby or Rails application!
+gem 'delivery_boy'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
