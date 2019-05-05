@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %w[edit update destroy]
+  before_action :set_user, only: %w[show update destroy]
 
   def index
     @users = User.all
   end
 
-  def edit; end
+  def show; end
 
   def update
     if @user.update(user_params)
