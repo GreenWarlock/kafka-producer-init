@@ -17,45 +17,78 @@ _Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https
 
 2. Clona el proyecto con el siguiente comando:
 
-```bash
-$ git clone https://github.com/fer9305/kafka-producer-init.git
-```
+    ```bash
+    $ git clone https://github.com/fer9305/kafka-producer-init.git
+    ```
 
 3. Instala Docker dependiendo de tu sistema operativo:
 
-### Ubuntu 
+    ### Ubuntu 
+    
+    Docker:
+    https://ubunlog.com/como-instalar-docker-en-ubuntu-18-04-y-derivados/
+    
+    Docker compose:
+    https://linuxize.com/post/how-to-install-and-use-docker-compose-on-ubuntu-18-04/
+    
+    ### Mac: 
+    
+    https://platzi.com/tutoriales/1432-docker/1779-como-instalar-docker-en-windows-y-mac/
 
-Docker:
-https://ubunlog.com/como-instalar-docker-en-ubuntu-18-04-y-derivados/
+4. Ejecuta el siguiente comando desde la raíz del proyecto para construir los containers de Docker (esto puede tardar ~15mins dependiendo de la velocidad de tu internet)
 
-Docker compose:
-https://linuxize.com/post/how-to-install-and-use-docker-compose-on-ubuntu-18-04/
+    ```bash
+    $ docker-compose up
+    ```
+    
+    *NOTA:* Si algún comando falla en Linux ejecutalos usando sudo
+    
+    ```bash
+    $ sudo docker-compose up
+    ```
 
-### Mac: 
+5. Instala `RVM (el cual nos ayudará a instalar multiples versiones de ruby)`
 
-https://platzi.com/tutoriales/1432-docker/1779-como-instalar-docker-en-windows-y-mac/
+    ### Ubuntu
+    
+    Sigue la siguiente guia --> https://linuxize.com/post/how-to-install-ruby-on-ubuntu-18-04/#install-ruby-using-rvm
+    
+    Una vez completada la guia instala `Ruby 2.5.1`
+    ```bash
+    $ rvm install 2.5.1
+    ``` 
+    
+    ### Mac
+    
+    Sigue la siguiente guia --> https://null-byte.wonderhowto.com/how-to/mac-for-hackers-install-rvm-maintain-ruby-environments-macos-0174401/
+    
+    Una vez completada la guia instala `Ruby 2.5.1`
+    ```bash
+    $ rvm install 2.5.1
+    ``` 
+    
+6. Instala `Bundler` el manejador de dependencias de Ruby
+   
+    ```bash
+    $ gem install bundler
+    ```
+    
+7. En la raíz del proyecto ejecuta el siguiente comando para instalar las dependencias
 
-4. Ejecuta el siguiente comando para construir los containers de Docker (esto puede tardar ~15mins dependiendo de la velocidad de tu internet)
+    ```bash
+    $ bundle install
+    ```
 
-```bash
-$ docker-compose up
-```
+8. Ejecuta los siguientes comandos para crear la base de datos y popular las tablas
 
-*NOTA:* Si algún comando falla en Linux ejecutalos usando sudo
+    ```bash
+    $ rails db:create
+    $ rails db:migrate
+    $ rails db:seed
+    ```
 
-```bash
-$ sudo docker-compose up
-```
-
-5. Ejecuta los siguientes comandos para crear la base de datos y popular las tablas
-
-```bash
-$ rails db:create
-$ rails db:migrate
-$ rails db:seed
-```
-
-6. Por ultimo ejecuta el servidor de Rails y ve a --> http://localhost:3000/
-```bash
-$ rails s
-```
+9. Por ultimo ejecuta el servidor de Rails y ve a --> http://localhost:3000/
+    
+    ```bash
+    $ rails s
+    ```
