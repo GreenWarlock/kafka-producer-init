@@ -3,8 +3,7 @@
 Este repo contiene la app a usarse para el workshop Kafka on Rails del Nearsoft Con. 
 Trabajaremos en base a esta app agregando la funcionalidad para conectarse con Kafka y mandar mensajes
 a los consumers. 
-La app esta distribuida en 4 Docker containers los cuales configuran y corrren Kafka, Zookeper, Postgres 
-y la aplicación LinkedOn.
+La app esta distribuida en 3 Docker containers los cuales configuran y corrren Kafka, Zookeper, Postgres.
 
 ## Setup
 
@@ -39,21 +38,24 @@ https://platzi.com/tutoriales/1432-docker/1779-como-instalar-docker-en-windows-y
 4. Ejecuta el siguiente comando para construir los containers de Docker (esto puede tardar ~15mins dependiendo de la velocidad de tu internet)
 
 ```bash
-$ docker-compose build
 $ docker-compose up
 ```
 
 *NOTA:* Si algún comando falla en Linux ejecutalos usando sudo
 
 ```bash
-$ sudo docker-compose build
 $ sudo docker-compose up
 ```
 
 5. Ejecuta los siguientes comandos para crear la base de datos y popular las tablas
 
 ```bash
-$ docker-compose run web rake db:create
-$ docker-compose run web rake db:migrate
-$ docker-compose run web rake db:seed
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+```
+
+6. Por ultimo ejecuta el servidor de Rails y ve a --> http://localhost:3000/
+```bash
+$ rails s
 ```
