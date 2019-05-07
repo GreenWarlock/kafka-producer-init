@@ -56,7 +56,7 @@ _Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https
     $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
     ```
     
-    Una vez completada la guia instala `Ruby 2.5.1`
+    Una vez completado instala `Ruby 2.5.1`
     ```bash
     $ rvm install 2.5.1
     ``` 
