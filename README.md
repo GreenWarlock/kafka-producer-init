@@ -61,6 +61,14 @@ _Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https
     $ rvm install ruby 2.5.1
     ``` 
     
+    Ahora instala los siguientes paquetes necesarios para configurar las gemas en Ubuntu:
+    ```bash
+    $ sudo apt-get update
+    $ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+    $ sudo apt-get install -y bash-completion netcat nodejs redis-tools vim
+    $ sudo apt-get install postgresql-client-9.6
+    ```
+    
     ### Mac
     
     Sigue la siguiente guia --> https://null-byte.wonderhowto.com/how-to/mac-for-hackers-install-rvm-maintain-ruby-environments-macos-0174401/
