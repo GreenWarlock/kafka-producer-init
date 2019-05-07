@@ -51,7 +51,10 @@ _Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https
 
     ### Ubuntu
     
-    Sigue la siguiente guia --> https://linuxize.com/post/how-to-install-ruby-on-ubuntu-18-04/#install-ruby-using-rvm
+    En terminal ejecuta
+    ```bash
+    $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    ```
     
     Una vez completada la guia instala `Ruby 2.5.1`
     ```bash
