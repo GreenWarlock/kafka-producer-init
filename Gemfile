@@ -45,6 +45,9 @@ gem 'jquery-rails'
 # This library provides a dead easy way to start publishing messages to a Kafka cluster from your Ruby or Rails application!
 gem 'delivery_boy'
 
+# Makes http fun again! Ain't no party like a httparty, because a httparty don't stop.
+gem 'httparty', '~> 0.17.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
