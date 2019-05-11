@@ -41,7 +41,7 @@ _Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https
     $ docker-compose up
     ```
     
-    *NOTA:* Si algún comando falla en Linux ejecutalos usando sudo
+    *NOTA:* Si te da algun error de que no se puede conectar al docker daemon, ejecutalo con sudo
     
     ```bash
     $ sudo docker-compose up
