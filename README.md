@@ -10,7 +10,7 @@ La app esta distribuida en 3 Docker containers los cuales configuran y corrren K
 ### Requisitos:
 
 _Sistema operativo_: Ubuntu, Mac OS o Windows 10 con subsistema Ubuntu --> https://docs.microsoft.com/es-es/windows/wsl/install-win10 
-(Usar Windows bajo su propio riesgo, esto debido a que correr Rails en Windows trae muchos problemas)
+(No se puede usar Windows debido a los problemas de compatilidad)
     
 
 1. Instala git en tu computadora (Omite este paso si ya lo tienes) https://git-scm.com/book/es/v1/Empezando-Instalando-Git
