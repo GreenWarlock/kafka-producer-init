@@ -31,6 +31,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def create_message
+    return if params[:id].to_i == current_user.id
+
+    DeliveryBoy.deliver_async({ resource_visited: params[:id].to_i,
+                                user: current_user.email,
+                                city: current_user.city }.to_json,
+                              topic: 'profile', partition_key: params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:email, :last_name, :first_name, :birthday,
                                  :city, :country)
