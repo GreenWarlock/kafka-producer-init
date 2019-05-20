@@ -1,3 +1,5 @@
+## Si tienes problemas para iniciar la app crea un `Issue` en el siguiente link https://github.com/fer9305/kafka-producer-init/issues. Reporta lo mas descriptivo posible (screen shots, logs)
+
 # LinkedOn
 
 Este repo contiene la app a usarse para el workshop Kafka on Rails del Nearsoft Con. 
