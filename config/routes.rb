@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     get :statistics, to: 'users#statistics'
   end
 
-  resources :articles
+  resources :articles do
+    get :statistics, to: 'articles#statistics'
+  end
 end

@@ -14,6 +14,7 @@
       <td><%= link_to user&.email, user_path(user) %></td>
       <td><%= user&.first_name %></td>
       <td><%= user&.last_name %></td>
+      <td><%= link_to 'Views', user_statistics_path(user) %></td>
       <td><%= link_to 'Delete',
                       user_path(user),
                       method: :delete,

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %w[show update destroy]
+  after_action :create_message, only: %w[show]
 
   def index
     @users = User.all
@@ -22,7 +23,13 @@ class UsersController < ApplicationController
   end
 
   def statistics
+    response = HTTParty.get("http://localhost:3001/views/#{params[:user_id]}")
 
+    @hash = JSON.parse(response.body)
+
+    @hash[:user] = User.find(params[:user_id])
+
+    render 'users/statistics'
   end
 
   private

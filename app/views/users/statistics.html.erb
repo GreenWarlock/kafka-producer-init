@@ -1,0 +1,25 @@
+<h1>Statistics of <%= @hash[:user].first_name %></h1>
+
+<h4>Total views <%= @hash[:total_views] %></h4>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Views</th>
+    <th>City</th>
+    <th>Last viewed at</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @hash['items']&.each do |user| %>
+    <tr>
+      <td><%= user['user_email'] %></td>
+      <td><%= user['count'] %></td>
+      <td><%= user['city'] %></td>
+      <td><%= DateTime.parse(user['updated_at']).strftime('%a %b %d %Y') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
